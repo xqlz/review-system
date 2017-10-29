@@ -1,4 +1,5 @@
-# Application Name
+# Review System
 
 ## Schema Diagram
-![Schema diagram picture](resources/schema-diagram.png)
+
+![Schema diagram picture](resources/schema-diagram.PNG)
