@@ -1,0 +1,22 @@
+<h1>Book Reviews</h1>
+
+<table>
+	<thead>
+		<tr>
+		<th>Username</th>
+		<th>Title</th>
+		<th>Rating</th>
+		<th>Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @reviews.each do |review| %>
+			<tr>
+				<td><%= review.username %></td>
+				<td><%= review.title %></td>
+				<td><%= review.rating %></td>
+				<td><%= review.comment %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
