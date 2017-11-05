@@ -1,0 +1,9 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  TargetRailsVersion: 5.1
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false  
