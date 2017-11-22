@@ -1,12 +1,17 @@
-<%= form_for @review do |f| %>
+<h1>Edit Review</h1>
+<%= form_for [@book, @review] do |f| %>
+
+	<p>
+		Title: <%= @book.title %>
+	</p>
 	<p>
 		<%= f.label :rating %>
 		<%= f.text_field :rating %>
 	</p>
 	<p>
-		<%= f.label :comment %>
+		<%= f.label :review %>
 		<%= f.text_field :comment %>
 	</p>
 
-	<%= f.submit 'Edit' %>
+	<%= f.submit 'Submit' %>
 <% end %>

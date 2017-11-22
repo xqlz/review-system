@@ -5,10 +5,6 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
-  def show
-    @reviews = Review.find(params[:id])
-  end
-
   def new
     @book = Book.find(params[:book_id])
     @review = Review.new
@@ -29,12 +25,14 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @book = Book.find(params[:book_id])
+    @review.book = @book
   end
 
   def update
-    book = Review.find(params[:id])
+    @review = Review.find(params[:id])
 
-    if review.update(review_params)
+    if @review.update(review_params)
       redirect_to book_reviews_path
     else
       render :edit
@@ -47,6 +45,6 @@ class ReviewsController < ApplicationController
   end
 
   private def review_params
-    params.require(:review).permit(:username, :title, :rating, :comment)
+    params.require(:review).permit(:username, :rating, :comment)
   end
 end
